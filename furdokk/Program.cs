@@ -13,7 +13,7 @@ namespace StrandC
         public string cím { get; private set; }
         public int ár { get; private set; }
         public int vizhofok { get; private set; }
-    public Furdo(string sor)
+        public Furdo(string sor)
         {
             string[] adatok = sor.Split(";");
             név = adatok[0];
@@ -31,14 +31,17 @@ namespace StrandC
             return cím.Split(" ")[1].Split(" ")[0];
         }
         internal class Program
-    {
-        static void Main(string[] args)
         {
+            static void Main(string[] args)
+            {
                 List<Furdo> list = new List<Furdo>();
                 string[] sorok = File.ReadAllLines("strandadatok.txt").Skip(1).ToArray();
                 foreach (string s in sorok)
                 {
                     list.Add(new Furdo(s));
-                } 
+                }
+                Console.WriteLine($"7. feladat: Strandok száma: {list.Count}");
+            }
+        }
     }
 }
