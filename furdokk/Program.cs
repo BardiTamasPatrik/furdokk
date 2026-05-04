@@ -41,7 +41,14 @@ namespace StrandC
                     list.Add(new Furdo(s));
                 }
                 Console.WriteLine($"7. feladat: Strandok száma: {list.Count}");
+                int osszeg = 0;
+                foreach (var item in list){
+                    osszeg += item.ár;
+                }
+                double atlag = (double)osszeg / list.Count;
+                Console.WriteLine($"8. feladat: Strandok átlagára: {atlag}");
             }
+            
         }
     }
 }
