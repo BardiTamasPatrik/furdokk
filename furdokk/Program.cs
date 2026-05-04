@@ -46,7 +46,18 @@ namespace StrandC
                     osszeg += item.ár;
                 }
                 double atlag = (double)osszeg / list.Count;
-                Console.WriteLine($"8. feladat: Strandok átlagára: {atlag}");
+                Console.WriteLine($"8. feladat: Strandok átlagára: {atlag:F1}\r\n");
+
+                Furdo min = list[0];
+                foreach (var item in list)
+                {
+                    if (item.vizhofok < min.vizhofok)
+                    {
+                        min = item;
+                    }
+                }
+                Console.WriteLine("9. feladat.");
+                Console.WriteLine($"Leghidegebb viz a {min.név} nevu fordoben van\r\n");
             }
             
         }
