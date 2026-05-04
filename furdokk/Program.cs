@@ -42,7 +42,8 @@ namespace StrandC
                 }
                 Console.WriteLine($"7. feladat: Strandok száma: {list.Count}");
                 int osszeg = 0;
-                foreach (var item in list){
+                foreach (var item in list)
+                {
                     osszeg += item.ár;
                 }
                 double atlag = (double)osszeg / list.Count;
@@ -58,8 +59,25 @@ namespace StrandC
                 }
                 Console.WriteLine("9. feladat.");
                 Console.WriteLine($"Leghidegebb viz a {min.név} nevu fordoben van\r\n");
+
+                Console.WriteLine("10. feladat: Add meg a furdo nevét!: \n\r");
+                string nev = Console.ReadLine();
+                Furdo valasz = null;
+                foreach (var item in list)
+                {
+                    if (item.név == nev)
+                    {
+                        valasz = item;
+                    }
+                }
+                if (valasz != null)
+                    Console.WriteLine($"A furdo" + $"{valasz.telepules()} telepulesen van, az iranyito szama {valasz.IRSZ()}");
+                else
+                {
+                    Console.WriteLine("Nincs ilyen nevű furdo!");
+                }
+
             }
-            
         }
     }
 }
