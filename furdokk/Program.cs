@@ -9,7 +9,7 @@ namespace StrandC
 {
     public class Furdo
     {
-        public String név { get; private set; }
+        public string név { get; private set; }
         public string cím { get; private set; }
         public int ár { get; private set; }
         public int vizhofok { get; private set; }
@@ -21,8 +21,16 @@ namespace StrandC
             ár = int.Parse(adatok[2]);
             vizhofok = int.Parse(adatok[3]);
 
-        } 
-    internal class Program
+        }
+        public string IRSZ()
+        {
+            return cím.Split(" ")[0];
+        }
+        public string telepules()
+        {
+            return cím.Split(" ")[1].Split(" ")[0];
+        }
+        internal class Program
     {
         static void Main(string[] args)
         {
